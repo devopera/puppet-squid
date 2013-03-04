@@ -32,6 +32,7 @@ class squid::params {
   }
 
   $cache_dir = "/var/spool/${package}"
+  $log_dir = "/var/log/${package}"
   $config_file = "/etc/${package}/squid.conf"
 
 }

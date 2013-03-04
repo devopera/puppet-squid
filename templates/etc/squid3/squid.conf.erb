@@ -2343,6 +2343,7 @@ cache_swap_high <%= cache_swap_high %>
 #       access_log /var/log/squid3/access.log squid
 #Default:
 # access_log /var/log/squid3/access.log squid
+access_log <%= log_dir %>/access.log squid
 
 #  TAG: icap_log
 #   ICAP log files record ICAP transaction summaries, one line per
@@ -2449,7 +2450,8 @@ cache_swap_high <%= cache_swap_high %>
 #       cache_store_log /var/log/squid3/store.log
 #Default:
 # none
-cache_store_log /var/log/squid3/store.log
+#cache_store_log /var/log/squid3/store.log
+cache_store_log <%= log_dir %>/store.log
 
 #  TAG: cache_swap_state
 #   Location for the cache "swap.state" file. This index file holds
@@ -2653,7 +2655,8 @@ log_fqdn <%= log_fqdn %>
 #
 
 # Leave coredumps in the first cache dir
-coredump_dir /var/spool/squid3
+#coredump_dir /var/spool/squid3
+coredump_dir <%= cache_dir %>
 
 # OPTIONS FOR FTP GATEWAYING
 # -----------------------------------------------------------------------------
