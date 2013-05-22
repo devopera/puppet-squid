@@ -89,15 +89,12 @@ class squid(
     restart   => "/etc/init.d/${service} reload",
     subscribe => File[$config_file],
   }
-
-  firewall { '03129 Squid Caching Service':
-    action => 'accept',
-    proto  => ['udp','tcp'],
-    dport  => $http_port,
-    notify  => Exec['persist-firewall'],
-    before  => Class['docommon::firewall::post'],
-    require => Class['docommon::firewall::pre'],
+  
+  # setup firewall rules
+  class { 'squid::firewall' :
+    http_port => $http_port,
   }
+
 }
 
 # vim: set ts=2 sw=2 sts=2 tw=0 et:
