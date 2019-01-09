@@ -1917,7 +1917,8 @@ http_port <%= http_port %>
 #
 
 # We recommend you to use at least the following line.
-hierarchy_stoplist cgi-bin ?
+# @deprecated
+# hierarchy_stoplist cgi-bin ?
 
 # MEMORY CACHE OPTIONS
 # -----------------------------------------------------------------------------
@@ -2574,7 +2575,8 @@ cache_store_log <%= log_dir %>/store.log
 #   browsing.
 #Default:
 # log_fqdn off
-log_fqdn <%= log_fqdn %>
+# @deprecated
+# log_fqdn <%= log_fqdn %>
 
 #  TAG: client_netmask
 #   A netmask for client addresses in logfiles and cachemgr output.
